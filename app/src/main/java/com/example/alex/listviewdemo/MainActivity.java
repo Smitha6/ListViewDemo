@@ -46,9 +46,11 @@ public class MainActivity extends AppCompatActivity {
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
-            public void onItemLongClick(AdapterView<?> adapterView, View view, int i, long l)
+            public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l)
             {
                 Toast.makeText(getApplicationContext(), "Long Click", Toast.LENGTH_SHORT).show();
+
+                return true;
             }
         }
 

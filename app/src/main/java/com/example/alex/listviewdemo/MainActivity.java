@@ -10,10 +10,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-
     ListView lv;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

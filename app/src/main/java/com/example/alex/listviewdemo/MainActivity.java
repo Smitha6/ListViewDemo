@@ -8,31 +8,45 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
-    ListView lv;
-    Course csci490;
+    ListView listView;
+    Course course;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        csci490 = new Course();
-        csci490.setCourseName("CSCI 490");
-        csci490.setCourseNumber(490);
-        csci490.setProfessor("Briggs");
+
+        //lv = findViewById(R.id.class_schedule);
+        //String[] arr = {"Spanish","CSCI 250","CSCI 230","PEAC 120","CSCI 490"};
+        //ArrayAdapter arrAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
+        //lv.setAdapter(arrAdapt);
 
 
-        lv = findViewById(R.id.class_schedule);
+        ArrayList<Course> courses = new ArrayList<>();
 
-        String[] arr = {"Spanish","CSCI 250","CSCI 230","PEAC 120","CSCI 490"};
+        course = new Course();
+        course.setCourseName("CSCI");
+        course.setCourseNumber("490");
+        course.setProfessor("Briggs");
+        courses.add(course);
 
-        ArrayAdapter arrAdapt = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arr);
-        lv.setAdapter(arrAdapt);
+        course = new Course();
+        course.setCourseName("CSCI");
+        course.setCourseNumber("250");
+        course.setProfessor("Hajah");
+        courses.add(course);
+
+        CourseAdapter adapter = new CourseAdapter(this, courses);
+
+        listView.setAdapter(adapter);
 
 
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
@@ -40,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             }}
         );
 
-        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
             @Override
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l)

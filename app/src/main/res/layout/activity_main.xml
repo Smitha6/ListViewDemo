@@ -6,9 +6,28 @@
     android:layout_height="match_parent"
     tools:context="com.example.alex.listviewdemo.MainActivity">
 
-    <ListView
-        android:id="@+id/class_schedule"
+
+
+    <TwoLineListItem xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="169dp"></ListView>
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/listPreferredItemHeight"
+        android:mode="twoLine" >
+
+
+        <TextView android:id="@+id/text1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:layout_alignStart="@id/text1"
+            android:textAppearance="?attr/textAppearanceListItemSecondary" />
+
+    </TwoLineListItem>
 
 </android.support.constraint.ConstraintLayout>

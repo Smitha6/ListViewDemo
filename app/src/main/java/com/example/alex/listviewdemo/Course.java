@@ -7,13 +7,13 @@ package com.example.alex.listviewdemo;
 public class Course {
 
     private String name;
-    private int number;
+    private String number;
     private String professor;
 
     public Course() {}
 
     public void setCourseName(String name) {this.name = name;}
-    public void setCourseNumber(int number)
+    public void setCourseNumber(String number)
     {
         this.number = number;
     }
@@ -26,7 +26,7 @@ public class Course {
     {
         return name;
     }
-    public int getCourseNumber()
+    public String getCourseNumber()
     {
         return number;
     }

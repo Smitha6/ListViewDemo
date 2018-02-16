@@ -11,11 +11,17 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     ListView lv;
+    Course csci490;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        csci490 = new Course();
+        csci490.setCourseName("CSCI 490");
+        csci490.setCourseNumber(490);
+        csci490.setProfessor("Briggs");
 
 
         lv = findViewById(R.id.class_schedule);
@@ -27,18 +33,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l)
             {
                 Toast.makeText(getApplicationContext(), "Short Click", Toast.LENGTH_SHORT).show();
-            }
-
-                                  }
-
+            }}
         );
-
-
 
         lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
@@ -46,14 +46,11 @@ public class MainActivity extends AppCompatActivity {
             public boolean onItemLongClick(AdapterView<?> adapterView, View view, int i, long l)
             {
                 Toast.makeText(getApplicationContext(), "Long Click", Toast.LENGTH_SHORT).show();
-
                 return true;
             }
         }
-
         );
 
     }
-
 
 }

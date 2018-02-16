@@ -12,16 +12,11 @@ public class Course {
 
     public Course() {}
 
-    public void setCourseName(String name)
-    {
-        this.name = name;
-    }
-
+    public void setCourseName(String name) {this.name = name;}
     public void setCourseNumber(int number)
     {
         this.number = number;
     }
-
     public void setProfessor(String profName)
     {
         professor = profName;
